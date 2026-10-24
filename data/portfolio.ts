@@ -29,21 +29,21 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
-      title: "Project Name [Placeholder]",
-      description: "This is a placeholder for your currently in-development project. Describe what it does, the problem it solves, and your role.",
-      techStack: ["React", "TypeScript", "Tailwind CSS"],
+      title: "In the Lab 🧪",
+      description: "Currently experimenting with modern web frameworks and AI integrations. I am building something special from the ground up—check back soon for the live demo.",
+      techStack: ["R&D", "UI/UX", "Brainstorming"],
       githubUrl: "https://github.com/placeholder/project1",
       liveUrl: "", 
-      image: "", 
+      image: "/comingsoon.jpg", 
     },
     {
       id: 2,
-      title: "Upcoming Project [Placeholder]",
-      description: "Another placeholder to demonstrate the grid layout. Update this when your next project is ready.",
-      techStack: ["Python", "Algorithms"],
+      title: "Engineering in Progress ⚙️",
+      description: "Always looking for complex technical problems to solve. Currently translating late-night coffee and advanced data structures into my next digital experience.",
+      techStack: ["Problem Solving", "Algorithms", "Development"],
       githubUrl: "https://github.com/placeholder/project2",
       liveUrl: "",
-      image: "",
+      image: "/comingsoon.jpg",
     }
   ]
 };
