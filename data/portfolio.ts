@@ -21,7 +21,7 @@ export const portfolioData = {
     {
       id: 1,
       title: "2nd Year CSE Student",
-      organization: "University [Placeholder]",
+      organization: "GIDC DEGREE ENGINEERING COLLEGE, ABRAMA, NAVSARI",
       date: "Present",
       description: "Currently pursuing a degree in Computer Science Engineering, focusing on foundational computer science principles, Data Structures and Algorithms, and active project development.",
     }
