@@ -2,7 +2,7 @@ export const portfolioData = {
   personal: {
     name: "Mann Naik",
     role: "CSE Student & Developer",
-    shortBio: "A Computer Science Engineering Student that likes to build websites and Crack the Code. Currently working on many upcoming projects.",
+    shortBio: "Second-year engineering student exploring modern web architecture and AI technologies.",
     location: "Bilimora, Gujarat",
     email: "mannnaik1508@gmail.com",
   },
