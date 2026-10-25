@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="w-full border-t border-border mt-auto">
       <div className="max-w-6xl mx-auto px-6 sm:px-12 md:px-24 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="text-muted text-sm">
-          © {currentYear} {portfolioData.personal.name}. All rights reserved.
+         © {currentYear} {portfolioData.personal.name}. All rights reserved. <span className="ml-2 text-xs opacity-50 font-mono">v2.0.0</span>
         </div>
         <div className="flex items-center gap-6">
           <a href={portfolioData.links.github} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-foreground transition-colors" aria-label="GitHub">
