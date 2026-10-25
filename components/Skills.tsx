@@ -29,12 +29,12 @@ export default function Skills() {
       >
         {portfolioData.skills.map((skill, index) => (
           <motion.div
-            key={index}
-            variants={item}
-            className="px-5 py-2.5 bg-surface border border-border rounded-full text-sm font-medium text-foreground hover:border-accent/50 hover:bg-accent/5 transition-colors cursor-default"
-          >
-            {skill.name}
-          </motion.div>
+  key={index}
+  variants={item}
+  className="px-5 py-2.5 bg-white/5 border border-white/10 rounded-xl text-sm font-medium text-gray-200 backdrop-blur-md hover:bg-white/10 transition-colors cursor-default"
+>
+  {skill.name}
+</motion.div>
         ))}
       </motion.div>
     </section>

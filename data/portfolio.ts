@@ -20,11 +20,25 @@ export const portfolioData = {
   experience: [
     {
       id: 1,
-      title: "2nd Year CSE Student",
-      organization: "GIDC DEGREE ENGINEERING COLLEGE, ABRAMA, NAVSARI",
-      date: "Present",
-      description: "Currently pursuing a degree in Computer Science Engineering, focusing on foundational computer science principles, Data Structures and Algorithms, and active project development.",
-    }
+    date: "2013 - 2022",
+    title: "1st - 9th Standard",
+    company: "BS Patel Primary School, Bilimora",
+    description: "",
+  },
+  {
+    id: 2,
+    date: "2022 - 2025",
+    title: "10th - 12th Standard",
+    company: "Bilimora International School, Bilimora",
+    description: "",
+  },
+  {
+    id: 3,
+    date: "2025 - Present",
+    title: "2nd Year CSE Student",
+    company: "GIDC DEGREE ENGINEERING COLLEGE, ABRAMA, NAVSARI",
+    description: "",
+  }
   ],
   projects: [
     {

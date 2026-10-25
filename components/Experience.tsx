@@ -21,7 +21,7 @@ export default function Experience() {
             <div className="absolute -left-[41px] md:-left-[49px] top-1.5 w-4 h-4 rounded-full bg-surface border-2 border-accent"></div>
             <span className="text-sm font-medium text-accent mb-2 block">{exp.date}</span>
             <h3 className="text-xl font-semibold text-foreground">{exp.title}</h3>
-            <span className="text-muted block mb-4">{exp.organization}</span>
+            <span className="text-muted block mb-4">{exp.company}</span>
             <p className="text-muted text-sm leading-relaxed max-w-2xl">
               {exp.description}
             </p>
