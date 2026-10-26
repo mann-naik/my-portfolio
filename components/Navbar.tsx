@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -16,7 +16,6 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Experience", href: "#experience" },
@@ -26,50 +25,65 @@ export default function Navbar() {
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled ? "bg-background/80 backdrop-blur-md border-b border-border py-4" : "bg-transparent py-6"
     }`}>
-      <div className="max-w-6xl mx-auto px-6 sm:px-12 md:px-24 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 sm:px-12 md:px-24 flex items-center justify-between relative z-50">
         <Link href="/" className="text-xl font-bold tracking-tighter text-foreground hover:text-accent transition-colors">
           MN<span className="text-accent">.</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-  <a key={link.name} href={link.href} className="text-sm font-medium text-muted hover:text-foreground transition-colors">
-    {link.name}
-  </a>
-))}
-          <Link href="#contact" className="text-sm font-medium bg-foreground text-background px-4 py-2 rounded-full hover:bg-accent hover:text-white transition-all">
-            Get in touch
-          </Link>
-        </nav>
-        <button className="md:hidden text-foreground" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle Menu">
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        
+        {/* The 3-lines icon is now always visible, removing md:hidden */}
+        <button 
+          className="text-foreground hover:text-accent transition-colors" 
+          onClick={() => setMenuOpen(!menuOpen)} 
+          aria-label="Toggle Menu"
+        >
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
+
       <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.nav 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full bg-surface border-b border-border flex flex-col items-center py-6 gap-6 md:hidden shadow-2xl"
-          >
-            {navLinks.map((link) => (
-  <a 
-    key={link.name} 
-    href={link.href} 
-    onClick={() => setMobileMenuOpen(false)}
-    className="text-base font-medium text-muted hover:text-foreground transition-colors"
-  >
-    {link.name}
-  </a>
-))}
-            ))
-            <Link href="#contact" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-base font-medium bg-foreground text-background px-6 py-2 rounded-full"
+        {menuOpen && (
+          <>
+            {/* Optional dark overlay behind the menu */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setMenuOpen(false)}
+              className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+            />
+            
+            {/* The sliding vertical drawer */}
+            <motion.nav 
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", bounce: 0, duration: 0.4 }}
+              className="fixed top-0 right-0 h-screen w-64 bg-surface/95 border-l border-border flex flex-col pt-28 px-8 gap-8 shadow-2xl z-40"
             >
-              Get in touch
-            </Link>
-          </motion.nav>
+              <div className="flex flex-col gap-6">
+                {navLinks.map((link) => (
+                  <a 
+                    key={link.name} 
+                    href={link.href} 
+                    onClick={() => setMenuOpen(false)}
+                    className="text-lg font-medium text-muted hover:text-foreground hover:translate-x-2 transition-all"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </div>
+              
+              <div className="mt-8 border-t border-border pt-8 flex flex-col">
+                <a 
+                  href="#contact" 
+                  onClick={() => setMenuOpen(false)}
+                  className="text-center text-sm font-medium bg-foreground text-background px-6 py-3 rounded-full hover:scale-105 transition-transform"
+                >
+                  Get in touch
+                </a>
+              </div>
+            </motion.nav>
+          </>
         )}
       </AnimatePresence>
     </header>
