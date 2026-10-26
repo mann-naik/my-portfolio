@@ -21,8 +21,16 @@ export default function Projects() {
           >
             <div>
               <div className="w-full h-48 bg-zinc-900 rounded-lg mb-6 overflow-hidden relative flex items-center justify-center">
-                <span className="text-muted/50 font-medium">Project Preview</span>
-              </div>
+  {project.image ? (
+    <img 
+      src={project.image} 
+      alt={project.title} 
+      className="w-full h-full object-cover transition-transform hover:scale-105 duration-500" 
+    />
+  ) : (
+    <span className="text-muted/50 font-medium">Project Preview</span>
+  )}
+</div>
               <h3 className="text-xl font-semibold text-foreground mb-3">{project.title}</h3>
               <p className="text-muted mb-6 text-sm leading-relaxed">{project.description}</p>
               <div className="flex flex-wrap gap-2 mb-8">
