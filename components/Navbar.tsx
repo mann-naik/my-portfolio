@@ -32,10 +32,10 @@ export default function Navbar() {
         </Link>
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link key={link.name} href={link.href} className="text-sm font-medium text-muted hover:text-foreground transition-colors">
-              {link.name}
-            </Link>
-          ))}
+  <a key={link.name} href={link.href} className="text-sm font-medium text-muted hover:text-foreground transition-colors">
+    {link.name}
+  </a>
+))}
           <Link href="#contact" className="text-sm font-medium bg-foreground text-background px-4 py-2 rounded-full hover:bg-accent hover:text-white transition-all">
             Get in touch
           </Link>
@@ -53,17 +53,17 @@ export default function Navbar() {
             className="absolute top-full left-0 w-full bg-surface border-b border-border flex flex-col items-center py-6 gap-6 md:hidden shadow-2xl"
           >
             {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                href={link.href} 
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-medium text-muted hover:text-foreground transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link 
-              href="#contact" 
+  <a 
+    key={link.name} 
+    href={link.href} 
+    onClick={() => setMobileMenuOpen(false)}
+    className="text-base font-medium text-muted hover:text-foreground transition-colors"
+  >
+    {link.name}
+  </a>
+))}
+            ))
+            <Link href="#contact" 
               onClick={() => setMobileMenuOpen(false)}
               className="text-base font-medium bg-foreground text-background px-6 py-2 rounded-full"
             >
