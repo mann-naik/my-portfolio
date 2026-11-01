@@ -26,22 +26,21 @@ export default function About() {
             When I'm not studying or coding, you'll likely find me exploring new technologies and planning my upcoming projects.
           </p>
         </motion.div>
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="relative aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden bg-surface border border-border flex items-center justify-center group"
-        >
-          <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-violet-500/10 opacity-50 group-hover:opacity-100 transition-opacity duration-500"/>
-          <Image
-  src="/profile.jpg"
-  alt="Mann Naik"
-  fill
-  className="object-cover z-10"
-  priority
-/>
-        </motion.div>
+        <motion.div
+  initial={{ opacity: 0, scale: 0.95 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5, delay: 0.2 }}
+  className="relative aspect-square md:aspect-[4/3] flex items-center justify-center drop-shadow-2xl"
+>
+  <Image
+    src="/profile-cutout.png"
+    alt="Mann Naik"
+    fill
+    className="object-contain z-10"
+    priority
+  />
+</motion.div>
       </div>
     </section>
   );

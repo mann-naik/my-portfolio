@@ -1,100 +1,126 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import SectionHeading from "./ui/SectionHeading";
-import { Layout, Code2, Cloud, Award } from "lucide-react";
+import { X } from "lucide-react";
+
+const doorsData = [
+  {
+    id: "web",
+    title: "Web Development",
+    color: "bg-[#1e1b4b]", // Deep Indigo
+    borderColor: "border-indigo-500/30",
+    knob: "bg-amber-400",
+    skills: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Framer Motion"],
+  },
+  {
+    id: "core",
+    title: "Core & Logic",
+    color: "bg-[#064e3b]", // Deep Emerald
+    borderColor: "border-emerald-500/30",
+    knob: "bg-amber-400",
+    skills: ["Python", "C Programming", "Data Structures", "Algorithms"],
+  },
+  {
+    id: "arch",
+    title: "Architecture",
+    color: "bg-[#4c1d95]", // Deep Violet
+    borderColor: "border-purple-500/30",
+    knob: "bg-zinc-300",
+    skills: ["Git & GitHub", "Vercel Deployments", "Samsung DeX Workflows"],
+  },
+  {
+    id: "cloud",
+    title: "Cloud & Community",
+    color: "bg-[#7c2d12]", // Deep Orange
+    borderColor: "border-orange-500/30",
+    knob: "bg-zinc-300",
+    skills: ["Microsoft Learn Ambassador", "Google Cloud Arcade", "Tech Leadership"],
+  }
+];
 
 export default function Skills() {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
-  };
+  const [activeDoor, setActiveDoor] = useState<string | null>(null);
 
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  };
+  const selectedDoor = doorsData.find(d => d.id === activeDoor);
 
   return (
-    <section id="skills" className="w-full">
-      <SectionHeading 
-        title="Skills & Tech" 
-        subtitle="The tools, architectures, and ecosystems I work with." 
-      />
-
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8"
-      >
-        {/* Frontend & Web Dev Card */}
-        <motion.div variants={item} className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-colors">
-          <div className="flex items-center gap-3 mb-6">
-            <Layout className="text-gray-300" size={24} />
-            <h3 className="text-lg font-semibold text-foreground">Web Development</h3>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {["Next.js", "React", "Tailwind CSS", "TypeScript", "Framer Motion"].map((tech) => (
-              <span key={tech} className="px-3 py-1.5 bg-black/40 border border-white/5 rounded-lg text-sm text-gray-300">
-                {tech}
-              </span>
-            ))}
-          </div>
+    <section id="skills" className="w-full relative min-h-screen pt-12 flex flex-col">
+      {!activeDoor && (
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Magic happens behind the doors</h2>
+          <p className="text-muted text-lg">Click a door to unlock the technologies I build with.</p>
         </motion.div>
+      )}
 
-        {/* Core Languages Card */}
-        <motion.div variants={item} className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-colors">
-          <div className="flex items-center gap-3 mb-6">
-            <Code2 className="text-gray-300" size={24} />
-            <h3 className="text-lg font-semibold text-foreground">Core & Logic</h3>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {["Python", "C Programming", "Data Structures", "Algorithms"].map((tech) => (
-              <span key={tech} className="px-3 py-1.5 bg-black/40 border border-white/5 rounded-lg text-sm text-gray-300">
-                {tech}
-              </span>
-            ))}
-          </div>
-        </motion.div>
+      <div className="relative flex-1 w-full h-[60vh] flex items-center justify-center">
+        <AnimatePresence mode="wait">
+          {!activeDoor ? (
+            <motion.div
+              key="door-grid"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 w-full h-full pb-12"
+            >
+              {doorsData.map((door) => (
+                <motion.div
+                  key={door.id}
+                  layoutId={`door-${door.id}`}
+                  onClick={() => setActiveDoor(door.id)}
+                  className={`relative cursor-pointer rounded-t-full rounded-b-sm border-x-8 border-t-8 border-b-0 ${door.borderColor} ${door.color} flex items-center justify-center group overflow-hidden shadow-2xl transition-transform hover:-translate-y-2 duration-300`}
+                >
+                  {/* Decorative Door Panels */}
+                  <div className="absolute inset-6 border-2 border-black/20 rounded-t-full pointer-events-none" />
+                  
+                  {/* Stylized Door Knob */}
+                  <div className={`absolute right-4 top-1/2 w-4 h-12 rounded-full ${door.knob} shadow-md shadow-black/80 group-hover:scale-110 transition-transform`} />
 
-        {/* Architecture & Tools Card */}
-        <motion.div variants={item} className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-colors">
-          <div className="flex items-center gap-3 mb-6">
-            <Cloud className="text-gray-300" size={24} />
-            <h3 className="text-lg font-semibold text-foreground">Architecture & Tools</h3>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {["Git & GitHub", "Vercel Deployment", "Google AI Studio", "Gemini API"].map((tech) => (
-              <span key={tech} className="px-3 py-1.5 bg-black/40 border border-white/5 rounded-lg text-sm text-gray-300">
-                {tech}
-              </span>
-            ))}
-          </div>
-        </motion.div>
+                  <h3 className="text-2xl font-bold text-white/90 -rotate-90 tracking-widest whitespace-nowrap drop-shadow-lg">
+                    {door.title.toUpperCase()}
+                  </h3>
+                </motion.div>
+              ))}
+            </motion.div>
+          ) : (
+            <motion.div
+              key="open-door"
+              layoutId={`door-${activeDoor}`}
+              className={`absolute inset-0 z-50 ${selectedDoor?.color} ${selectedDoor?.borderColor} border-4 rounded-3xl p-8 md:p-16 flex flex-col shadow-2xl`}
+            >
+              <button 
+                onClick={() => setActiveDoor(null)}
+                className="absolute top-8 right-8 text-white/50 hover:text-white bg-black/20 p-3 rounded-full backdrop-blur-md transition-all hover:rotate-90 hover:bg-black/40"
+              >
+                <X size={28} />
+              </button>
+              
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-4xl md:text-6xl font-bold text-white mb-12 mt-8 md:mt-0"
+              >
+                {selectedDoor?.title}
+              </motion.h2>
 
-        {/* Certifications & Leadership Card */}
-        <motion.div variants={item} className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-colors">
-          <div className="flex items-center gap-3 mb-6">
-            <Award className="text-gray-300" size={24} />
-            <h3 className="text-lg font-semibold text-foreground">Community & Cloud</h3>
-          </div>
-          <ul className="space-y-4 text-sm text-gray-300">
-            <li className="flex items-start gap-3">
-              <span className="text-accent mt-0.5">✦</span>
-              Microsoft Learn Student Ambassador
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-accent mt-0.5">✦</span>
-              Google Cloud Arcade Facilitator (Cloud & AI Badges)
-            </li>
-          </ul>
-        </motion.div>
-      </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="flex flex-wrap gap-4"
+              >
+                {selectedDoor?.skills.map(skill => (
+                  <span key={skill} className="px-6 py-4 bg-black/40 border border-white/10 rounded-2xl text-xl font-medium text-white/90 shadow-xl backdrop-blur-md">
+                    {skill}
+                  </span>
+                ))}
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </section>
   );
 }
