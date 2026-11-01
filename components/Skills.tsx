@@ -65,12 +65,12 @@ export default function Skills() {
               className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 w-full h-full pb-12"
             >
               {doorsData.map((door) => (
-                <motion.div
-                  key={door.id}
-                  layoutId={`door-${door.id}`}
-                  onClick={() => setActiveDoor(door.id)}
-                  className={`relative cursor-pointer rounded-t-full rounded-b-sm border-x-8 border-t-8 border-b-0 ${door.borderColor} ${door.color} flex items-center justify-center group overflow-hidden shadow-2xl transition-transform hover:-translate-y-2 duration-300`}
-                >
+               <motion.div
+  key={door.id}
+  layoutId={`door-${door.id}`}
+  onClick={() => setActiveDoor(door.id)}
+  className={`relative w-full h-72 md:h-96 cursor-pointer rounded-t-full rounded-b-sm border-x-8 border-t-8 border-b-0 ${door.borderColor} ${door.color} flex items-center justify-center group overflow-hidden shadow-2xl transition-transform hover:-translate-y-2 duration-300`}
+>
                   {/* Decorative Door Panels */}
                   <div className="absolute inset-6 border-2 border-black/20 rounded-t-full pointer-events-none" />
                   
