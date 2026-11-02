@@ -1,5 +1,7 @@
+import React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+// @ts-ignore Next.js handles CSS imports at build time.
 import "@/app/globals.css";
 import Navbar from "@/components/Navbar";
 import MobileNav from "@/components/MobileNav";

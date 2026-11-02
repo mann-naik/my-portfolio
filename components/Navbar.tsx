@@ -39,11 +39,11 @@ export default function Navbar() {
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
+      </div>
 
       <AnimatePresence>
         {menuOpen && (
           <>
-            {/* Optional dark overlay behind the menu */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -52,7 +52,6 @@ export default function Navbar() {
               className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
             />
             
-            {/* The sliding vertical drawer */}
             <motion.nav 
               initial={{ x: "100%" }}
               animate={{ x: 0 }}

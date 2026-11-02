@@ -15,7 +15,7 @@ export default function Hero() {
         className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border w-max mb-8"
       >
         <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-        <span className="text-xs font-medium text-muted uppercase tracking-wider">Hello, I'm {portfolioData.personal.name}</span>
+        <span className="text-xs font-medium text-muted uppercase tracking-wider">Hello, I&apos;M {portfolioData.personal.name}</span>
       </motion.div>
       <motion.h1 
         initial={{ opacity: 0, y: 20 }}
