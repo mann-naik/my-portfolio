@@ -28,15 +28,15 @@ const doorsData = [
     color: "bg-[#4c1d95]", // Deep Violet
     borderColor: "border-purple-500/30",
     knob: "bg-zinc-300",
-    skills: ["Git & GitHub", "Vercel Deployments", "Samsung DeX Workflows"],
+    skills: ["Git & GitHub", "Vercel Deployments", "System Design"],
   },
   {
     id: "cloud",
     title: "Cloud & Community",
-    color: "bg-[#7c2d12]", // Deep Orange
+    color: "bg-[#7c2d12]", // Deep orange
     borderColor: "border-orange-500/30",
     knob: "bg-zinc-300",
-    skills: ["Microsoft Learn Ambassador", "Google Cloud Arcade", "Tech Leadership"],
+    skills: ["Google GeminiStudent Ambassador"],
   }
 ];
 
