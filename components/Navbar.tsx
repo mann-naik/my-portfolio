@@ -31,15 +31,14 @@ export default function Navbar() {
           MN<span className="text-accent">.</span>
         </Link>
         
-        {/* The 3-lines icon is now always visible, removing md:hidden */}
+        {/* The 3-lines icon is hidden on mobile, visible on desktop */}
         <button 
-          className="text-foreground hover:text-accent transition-colors" 
+          className="hidden md:block text-foreground hover:text-accent transition-colors" 
           onClick={() => setMenuOpen(!menuOpen)} 
           aria-label="Toggle Menu"
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
-      </div>
 
       <AnimatePresence>
         {menuOpen && (
