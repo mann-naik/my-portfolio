@@ -1,5 +1,8 @@
 "use client";
 
+import dynamic from "next/dynamic";
+
+const Hero3D = dynamic(() => import("./Hero3D"), { ssr: false });
 import { motion } from "framer-motion";
 import { portfolioData } from "@/data/portfolio";
 import { MapPin } from "lucide-react";
@@ -7,7 +10,8 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="w-full max-w-5xl pt-24 pb-32 md:pt-36 md:pb-28 flex flex-col items-start">
+   <section className="w-full max-w-6xl pt-24 pb-32 md:pt-36 md:pb-28 grid grid-cols-1 lg:grid-cols-12 items-center gap-10">
+    <div className="lg:col-span-7 flex flex-col items-start">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -57,7 +61,15 @@ export default function Hero() {
       >
         <MapPin size={16} />
         <span>Based in {portfolioData.personal.location}</span>
-      </motion.div>
+       <MapPin size={16} />
+          <span>Based in {portfolioData.personal.location}</span>
+        </motion.div>
+      </div>
+
+      {/* Right Column: 3D Glass Knot */}
+      <div className="lg:col-span-5 w-full flex items-center justify-center">
+        <Hero3D />
+      </div>
     </section>
   );
 }
