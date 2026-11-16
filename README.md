@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+👋 Mann Naik | Personal Portfolio
 
-## Getting Started
+<p align="center">
+  <a href="https://mannnaik.vercel.app/">
+    <img src="https://img.shields.io/badge/Portfolio-Live%20Website-blue?style=for-the-badge&logo=vercel" />
+  </a>
+  <img src="https://img.shields.io/badge/Next.js-Framework-black?style=for-the-badge&logo=next.js" />
+  <img src="https://img.shields.io/badge/TypeScript-Language-blue?style=for-the-badge&logo=typescript" />
+</p><p align="center">
+  <b>Building digital experiences.</b>
+  <br/>
+  A personal portfolio showcasing my journey, interests, and passion for technology.
+</p>---
 
-First, run the development server:
+🌐 Live Website
 
-```bash
+Explore my portfolio: https://mannnaik.vercel.app/
+
+👨‍💻 About Me
+
+Hi, I'm Mann Naik, a second-year Computer Science Engineering student based in Bilimora, Gujarat.
+
+I'm passionate about technology, programming, and building digital experiences. Currently, I'm strengthening my foundations in Data Structures and Algorithms while exploring modern web development, Python programming, and AI technologies.
+
+I enjoy learning new things, solving problems, and turning ideas into reality through code.
+
+✨ What's Inside
+
+- Personal introduction and developer profile
+- About Me section
+- My interests and technical journey
+- Portfolio navigation and contact section
+- Modern web experience
+
+🛠️ Tech Stack
+
+- Framework: Next.js
+- Language: TypeScript
+- UI Library: React
+- Typography: Geist Font
+- Deployment: Vercel
+
+🚀 Getting Started
+
+Want to run this project locally?
+
+1. Clone the repository
+
+git clone YOUR_GITHUB_REPOSITORY_URL
+
+2. Navigate to the project folder
+
+cd YOUR_PROJECT_FOLDER
+
+3. Install dependencies
+
+npm install
+
+4. Start the development server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open "http://localhost:3000" (http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+📦 Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+npm run build
 
-## Learn More
+🌍 Deployment
 
-To learn more about Next.js, take a look at the following resources:
+This portfolio is deployed using Vercel.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To deploy your own version, connect your GitHub repository to Vercel and follow the deployment instructions.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📬 Connect With Me
 
-## Deploy on Vercel
+🌐 Portfolio: https://mannnaik.vercel.app/
+📩 Email: mannnaik1508@gmail.com 
+📞 Call: 9274515805
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+📍 Location: Bilimora, Gujarat, India
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+<p align="center">
+  <b>Designed and developed by Mann Naik.</b>
+  <br/>
+  Building. Learning. Exploring. 🚀
+  <br/><br/>
+  ⭐ If you like this project, consider giving it a star!
+</p>
