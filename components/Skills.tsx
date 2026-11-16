@@ -69,7 +69,7 @@ export default function Skills() {
   key={door.id}
   layoutId={`door-${door.id}`}
   onClick={() => setActiveDoor(door.id)}
- className={`relative w-full aspect-[1/2] md:aspect-auto md:h-[28rem] cursor-pointer rounded-t-full rounded-b-sm border-x-8 border-t-8 border-b-0 ${door.borderColor} ${door.color} flex items-center justify-center group overflow-hidden shadow-2xl transition-transform hover:-translate-y-2 duration-300`}
+className={`relative w-full aspect-[2/3] md:aspect-auto md:h-[28rem] cursor-pointer rounded-t-full rounded-b-sm border-x-4 md:border-x-8 border-t-4 md:border-t-8 border-b-0 ${door.borderColor} ${door.color} flex items-center justify-center group overflow-hidden shadow-2xl transition-transform hover:-translate-y-2 duration-300`}
 >
   {/* Decorative Door Panels */}
   <div className="absolute inset-4 md:inset-6 border-2 border-black/20 rounded-t-full pointer-events-none" />
@@ -78,7 +78,7 @@ export default function Skills() {
   <div className={`absolute right-3 md:right-4 top-1/2 w-3 md:w-4 h-8 md:h-12 rounded-full ${door.knob} shadow-md shadow-black/80 group-hover:scale-110 transition-transform`} />
 
   {/* Responsive Text Styling */}
-  <h3 className="text-sm md:text-2xl font-bold text-white/90 -rotate-90 tracking-wider md:tracking-widest whitespace-nowrap drop-shadow-lg">
+  <h3 className="text-xs sm:text-sm md:text-2xl font-bold text-white/90 -rotate-90 tracking-wider md:tracking-widest whitespace-nowrap drop-shadow-lg">
     {door.title.toUpperCase()}
   </h3>
 </motion.div>
